@@ -26,12 +26,12 @@ def init_db():
         db.executescript(f.read().decode('utf8'))
 
 
-@click.command('init-db')
+@click.command(constant.INIT_DB_COMMAND)
 @with_appcontext
 def init_db_command():
     """Clear the existing data and create new tables with new default data."""
     init_db()
-    click.echo('Initialized the database.')
+    click.echo(constant.INIT_DB_MESS)
 
 def init_app(app):
     app.teardown_appcontext(close_db_connection)
