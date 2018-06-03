@@ -2,6 +2,7 @@ import sqlite3
 import click
 from flask import current_app, g
 from flask.cli import with_appcontext
+from werkzeug.security import generate_password_hash
 from . import constant
 
 
@@ -24,6 +25,11 @@ def init_db():
 
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
+    # add default user admin
+    db.execute(constant.INSERT_USER,
+               (constant.ADMIN, generate_password_hash(constant.ADMIN))
+    )
+    db.commit()
 
 
 @click.command(constant.INIT_DB_COMMAND)

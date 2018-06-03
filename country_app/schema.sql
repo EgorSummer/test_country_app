@@ -22,8 +22,6 @@ CREATE TABLE city (
   FOREIGN KEY (country_id) REFERENCES country (id)
 );
 
-INSERT INTO user (username, password) VALUES ('admin', 'admin');
-
 INSERT INTO country (name, description) VALUES (
   'United Kingdom',
   'The United Kingdom of Great Britain and Northern Ireland, commonly known as the United Kingdom (UK) or Britain, is a sovereign state in Europe.'

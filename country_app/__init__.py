@@ -8,7 +8,7 @@ def create_app():
     # creates and configures the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-    SEKRET_KEY='dev',
+    SECRET_KEY='dev',
     DATABASE=os.path.join(app.instance_path, 'country_app.sqlite'),
     )
     # loades the instance config, if it exists
@@ -21,5 +21,8 @@ def create_app():
 
     from . import db
     db.init_app(app)
+
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     return app
