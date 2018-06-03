@@ -25,4 +25,8 @@ def create_app():
     from . import auth
     app.register_blueprint(auth.bp)
 
+    from . import country_city
+    app.register_blueprint(country_city.bp)
+    app.add_url_rule('/<int:id>', endpoint='index')
+
     return app

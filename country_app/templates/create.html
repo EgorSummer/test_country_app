@@ -1,0 +1,14 @@
+
+{% extends 'country_city_index.html' %}
+ 
+  {% block create %}
+    <div class="content">
+      <form method="post">
+        <label for="name">Name</label>
+        <input name="name" id="name" value="{{ request.form['name'] }}" required>
+        <label for="description">Description</label>
+        <textarea name="description" id="description">{{ request.form['description'] }}</textarea>
+        <input type="submit" value="Save">
+      </form>
+    </div>
+  {% endblock %}

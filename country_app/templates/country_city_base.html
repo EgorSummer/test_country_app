@@ -1,0 +1,42 @@
+<!doctype html>
+   <html lang="en">
+     <head>
+       <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+       <title>country city</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+     </head>
+     <body>
+        <nav>
+              <span><h3>Countries of the World</h3></span>
+              <span><a href="{{url_for('auth.logout')}}">Log Out</a></span>
+        </nav>
+          <div class="col-md-3 tabs">
+            <div><h4>Countries</h4></div>
+            <ul>
+              {% for country in countries %}
+                {% if country['id'] == g.id %}
+                  <a href="{{url_for('country_city.index', id=country['id'])}}">
+                    <li class="active">
+                      <p><h4>{{country['name']}}</h4></p>
+                      <p>{{country['description']}}</p>
+                    </li>
+                  </a>
+                {% else %}
+                  <a href="{{url_for('country_city.index', id=country['id'])}}">
+                    <li class="color_gray">
+                      <p><h4>{{country['name']}}</h4></p>
+                      <p>{{country['description']}}</p>
+                    </li>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% block content %}
+          {% endblock %}
+      </body>
+   </html>
+

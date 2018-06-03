@@ -50,7 +50,7 @@ def login():
         if error is None:
             session.clear()
             session[constant.USER_ID] = user[constant.ID]
-            return redirect(url_for(constant.URL_INDEX))
+            return redirect(url_for('country_city.index', id='0'))
 
         flash(error)
 
@@ -59,5 +59,5 @@ def login():
 @bp.route(constant.URL_LOGOUT)
 def logout():
     session.clear()
-    return redirect(url_for(constant.URL_INDEX))
+    return redirect(url_for('auth.login'))
 

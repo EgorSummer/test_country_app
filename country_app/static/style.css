@@ -1,7 +1,7 @@
 
 html {
   font-family: sans-serif;
-  background: #eee;
+  background: white;
   padding: 1rem;
 }
 
@@ -51,6 +51,29 @@ nav ul  {
 nav ul li a, nav ul li span, header .action {
   display: block;
   padding: 0.5rem;
+}
+
+.active {
+  background:#B0C4DE;
+  color: white;
+}
+
+.tabs ul {
+  list-style: none;
+}
+
+.tabs a {
+  text-decoration: none;
+}
+
+.data_tab {
+  border: 1px solid darkgray;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.color_gray {
+  background: lightgray;
 }
 
 .reg_form {
