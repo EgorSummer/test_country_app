@@ -118,7 +118,7 @@ nav ul li a, nav ul li span, header .action {
   margin-bottom: 0.5em;
 }
 
-.content input, .content textarea {
+.btn-default, .content input, .content textarea {
   margin-bottom: 1em;
 }
 

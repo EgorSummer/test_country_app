@@ -10,7 +10,12 @@
               {{city_update['description']}}
             {% endif %}
           </textarea>
-          <input type="submit" value="Save">
+          <span>
+            <input type="submit" value="Save" class="btn btn-default">
+            <a href="{{url_for('country_city.index',
+             id_country=g.active_country_id)}}"
+              class="btn btn-default">Cancel</a>
+          </span>
         </form>
       </div>
     {% endblock %}

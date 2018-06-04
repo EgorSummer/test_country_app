@@ -9,9 +9,18 @@
    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
  </head>
  <body>
-    <nav>
-          <span><h3>Countries of the World</h3></span>
-          <span><a href="{{url_for('auth.logout')}}">Log Out</a></span>
+   <nav>
+     <div class="container">
+      <div class="col-md-4">
+        <h3>Countries of the World</h3>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div style="float: right">
+          <a href="{{url_for('auth.logout')}}"><h4>Log Out</h4></a>
+        </div>
+      </div>
+     </div>     
     </nav>
       <div class="col-md-3 tabs">
         <div><h4>Countries</h4></div>
