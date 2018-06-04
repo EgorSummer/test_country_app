@@ -21,6 +21,10 @@ python3 -m venv venv
 
 pip install flask
 
+# or
+
+pip -r requirements.txt 
+
 
 # initialize the database
 
@@ -59,8 +63,5 @@ flask run
 # visit http://127.0.0.1:5000/auth/login
 
 
-<<<<<<< HEAD
 #there is no registration, but the existing user: admin with password: admin
 
-=======
->>>>>>> ad679405aa83677270167b375712d11fdf40bff4

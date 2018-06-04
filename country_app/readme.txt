@@ -12,7 +12,10 @@ python3 -m venv venv
 . venv/bin/activate
 
 # install flask
-pip install flask
+pip install flask 
+
+# or
+pip -r requirements.txt 
 
 # initialize the database
 export FLASK_APP=country_app
