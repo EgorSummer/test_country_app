@@ -10,6 +10,8 @@ ADMIN = 'admin'
 NAME = 'name'
 DESCRIPTION = 'description'
 COUNTRY_ID = 'country_id'
+CITY = 'city'
+COUNTRY = 'country'
 
 INIT_DB_MESS = 'Initialised the database.'
 INIT_DB_COMMAND = 'init-db'
@@ -18,7 +20,7 @@ SELECT_USER_BY_NAME = 'SELECT * FROM user WHERE username = ?'
 SELECT_USER_BY_ID = 'SELECT * FROM user WHERE id = ?'
 SELECT_COUNTRY = 'SELECT * FROM country'
 SELECT_CITY_BY_COUNTRY = 'SELECT * FROM city WHERE country_id = ?'
-SELECT_CITY_BY_ID = 'SELECT * FROM city WHERE id = ?'
+SELECT_RECORD = 'SELECT * FROM {0} WHERE id = ?'
 INSERT_USER = 'INSERT INTO user (username, password) VALUES (?, ?)'
 INSERT_CITY = (
     'INSERT INTO city (name, description, country_id) VALUES (?, ?, ?)'
@@ -35,7 +37,7 @@ URL_INDEX = 'index'
 
 ERR_INC_USER_NAME_MESS = 'Incorrect username.'
 ERR_INC_PASS_MESS = 'Incorrect password.'
-ERR_CITY_NOT_EXIST = 'City id {0} doesn`t exist.'
+ERR_RECORD_NOT_EXIST = 'Record in table {0} with id {1} doesn`t exist.'
 ERR_NAME_IS_REQUIRED = 'Name is required.'
 
 

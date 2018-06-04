@@ -38,3 +38,6 @@ flask run
 
 # visit http://127.0.0.1:5000/auth/login
 
+
+#there is no registration, but the existing user: admin with password: admin
+
