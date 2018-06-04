@@ -31,7 +31,18 @@ def load_logged_in_user():
             constant.SELECT_USER_BY_ID, (user_id,)
         ).fetchone()
 
-@bp.route(constant.URL_LOGIN, methods=('GET', 'POST'))
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for('auth.login'))
+
+        return view(**kwargs)
+
+    return wrapped_view
+
+@bp.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         username = request.form[constant.USERNAME]
@@ -50,14 +61,17 @@ def login():
         if error is None:
             session.clear()
             session[constant.USER_ID] = user[constant.ID]
-            return redirect(url_for('country_city.index', id='0'))
+            return redirect(url_for('country_city.index', id_country='0'))
 
         flash(error)
 
     return render_template('auth.html')
 
-@bp.route(constant.URL_LOGOUT)
+@bp.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('auth.login'))
 
+@bp.route('/login_as_guest')
+def login_as_guest():
+    return redirect(url_for('country_city.index', id_country='0'))

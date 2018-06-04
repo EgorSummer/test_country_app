@@ -27,6 +27,6 @@ def create_app():
 
     from . import country_city
     app.register_blueprint(country_city.bp)
-    app.add_url_rule('/<int:id>', endpoint='index')
+    app.add_url_rule('/<int:id_country>', endpoint='index')
 
     return app

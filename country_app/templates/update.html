@@ -1,0 +1,16 @@
+{% extends 'country_city_base.html' %}
+    {% block update %}
+      <div class="content">
+        <form method="post">
+          <label for="name">Name</label>
+          <input name="name" id="name" value="{{city_update['name']}}" required>
+          <label for="description">Description</label>
+          <textarea name="description" id="description">
+            {% if city_update['description'] %}
+              {{city_update['description']}}
+            {% endif %}
+          </textarea>
+          <input type="submit" value="Save">
+        </form>
+      </div>
+    {% endblock %}

@@ -18,10 +18,15 @@ SELECT_USER_BY_NAME = 'SELECT * FROM user WHERE username = ?'
 SELECT_USER_BY_ID = 'SELECT * FROM user WHERE id = ?'
 SELECT_COUNTRY = 'SELECT * FROM country'
 SELECT_CITY_BY_COUNTRY = 'SELECT * FROM city WHERE country_id = ?'
+SELECT_CITY_BY_ID = 'SELECT * FROM city WHERE id = ?'
 INSERT_USER = 'INSERT INTO user (username, password) VALUES (?, ?)'
 INSERT_CITY = (
     'INSERT INTO city (name, description, country_id) VALUES (?, ?, ?)'
 )
+UPDATE_CITY = (
+    'UPDATE city SET name = ?, description = ?, country_id = ? WHERE id = ?'
+)
+DELETE_CITY = 'DELETE FROM city WHERE id = ?'
 
 URL_PREFIX_AUTH = '/auth'
 URL_LOGIN = '/login'
@@ -30,5 +35,7 @@ URL_INDEX = 'index'
 
 ERR_INC_USER_NAME_MESS = 'Incorrect username.'
 ERR_INC_PASS_MESS = 'Incorrect password.'
+ERR_CITY_NOT_EXIST = 'City id {0} doesn`t exist.'
+ERR_NAME_IS_REQUIRED = 'Name is required.'
 
 
