@@ -4,9 +4,8 @@
   {% block create %}
     <div class="content">
       <form method="post">
-        <label for="name">Name</label>
+        <span><h5>Create city</h5></span>
         <input name="name" id="name" value="{{ request.form['name'] }}" required>
-        <label for="description">Description</label>
         <textarea name="description" id="description">{{ request.form['description'] }}</textarea>
         <span>
           <input type="submit" value="Save" class="btn btn-default">

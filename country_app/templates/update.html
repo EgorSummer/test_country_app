@@ -2,9 +2,8 @@
     {% block update %}
       <div class="content">
         <form method="post">
-          <label for="name">Name</label>
+          <span><h5>Edit city {{city_update['name']}}</h5></span>
           <input name="name" id="name" value="{{city_update['name']}}" required>
-          <label for="description">Description</label>
           <textarea name="description" id="description">
             {% if city_update['description'] %}
               {{city_update['description']}}
